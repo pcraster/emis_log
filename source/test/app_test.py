@@ -1,6 +1,6 @@
 import unittest
 from flask import current_app, json
-from log import create_app
+from log_ import create_app
 
 
 class AppTest(unittest.TestCase):
