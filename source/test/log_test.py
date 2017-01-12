@@ -1,8 +1,8 @@
 import os.path
 import unittest
 from flask import current_app, json
-from log_ import create_app, db
-from log_.api.schema import *
+from emis_log import create_app, db
+from emis_log.api.schema import *
 
 
 class LogTestCase(unittest.TestCase):

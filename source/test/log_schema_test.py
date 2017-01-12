@@ -1,7 +1,7 @@
 import datetime
 import unittest
-from log_ import create_app
-from log_.api.schema import *
+from emis_log import create_app
+from emis_log.api.schema import *
 
 
 class LogSchemaTestCase(unittest.TestCase):

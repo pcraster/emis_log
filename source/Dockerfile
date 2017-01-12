@@ -6,7 +6,7 @@ MAINTAINER Kor de Jong <k.dejong1@uu.nl>
 # RUN pip install -r requirements.txt
 
 COPY cmd.sh server.py server_flask.py server_wsgi.py uwsgi.ini /
-COPY log_ /log_
+COPY emis_log /emis_log
 COPY test /test
 
 CMD ["/cmd.sh"]
