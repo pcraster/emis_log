@@ -1,5 +1,6 @@
 from werkzeug.exceptions import *
 from flask_restful import Resource
+from sqlalchemy import desc
 from flask import request
 from .. import db
 from .model import LogModel
@@ -34,7 +35,15 @@ class LogsResource(Resource):
 
     def get(self):
 
-        log_records = LogModel.query.all()
+        # We need the last x records, ordered by timestamp (old -> recent).
+        # - reverse the records
+        # - limit the number of records
+        # - go
+        # - reverse results
+        log_records = LogModel.query.order_by(desc(LogModel.timestamp)).limit(20).all()
+        log_records.reverse()
+
+        # log_records = LogModel.query.paginate().items
         data, errors = log_schema.dump(log_records, many=True)
 
         if errors:
