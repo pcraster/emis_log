@@ -40,7 +40,8 @@ class LogsResource(Resource):
         # - limit the number of records
         # - go
         # - reverse results
-        log_records = LogModel.query.order_by(desc(LogModel.timestamp)).limit(20).all()
+        log_records = LogModel.query.order_by(
+            desc(LogModel.timestamp)).limit(100).all()
         log_records.reverse()
 
         # log_records = LogModel.query.paginate().items
