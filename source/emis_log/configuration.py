@@ -39,7 +39,7 @@ class DevelopmentConfiguration(Configuration):
         Debug(app)
 
 
-class TestingConfiguration(Configuration):
+class TestConfiguration(Configuration):
 
     SERVER_NAME = os.environ.get("EMIS_LOG_SERVER_NAME") or "localhost"
     TESTING = True
@@ -58,6 +58,7 @@ class ProductionConfiguration(Configuration):
 
 configuration = {
     "development": DevelopmentConfiguration,
-    "testing": TestingConfiguration,
+    "test": TestConfiguration,
+    "acceptance": ProductionConfiguration,
     "production": ProductionConfiguration
 }
