@@ -41,8 +41,8 @@ class DevelopmentConfiguration(Configuration):
 
 class TestConfiguration(Configuration):
 
-    SERVER_NAME = os.environ.get("EMIS_LOG_SERVER_NAME") or "localhost"
-    TESTING = True
+    # SERVER_NAME = os.environ.get("EMIS_LOG_SERVER_NAME") or "localhost"
+    # TESTING = True
 
     SQLALCHEMY_DATABASE_URI = \
         os.environ.get("EMIS_LOG_TEST_DATABASE_URI") or \
